@@ -36,7 +36,7 @@ setup(
     url='https://github.com/mahmoudimus/sqlalchemy-citext',
     install_requires=[
         'SQLAlchemy>=0.6',
-        'psycopg2==2.4.5',
+        'psycopg2>=2.3',
     ],
     setup_requires=[],
     zip_safe=False,
