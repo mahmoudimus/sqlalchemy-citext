@@ -9,7 +9,7 @@ except ImportError:
 PATH_TO_FILE = os.path.dirname(__file__)
 
 
-with open(os.path.join(PATH_TO_FILE, 'README.rst')) as f:
+with open(os.path.join(PATH_TO_FILE, 'README.md')) as f:
     long_description = f.read()
 
 

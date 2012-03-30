@@ -24,7 +24,7 @@ if __name__ == '__main__':
     from sqlalchemy.schema import Column, Table
     import sqlalchemy.orm as orm
 
-    engine = create_engine('postgresql://balanced:balanced@localhost/balanced')
+    engine = create_engine('postgresql://localhost/test_db')
     meta = MetaData()
 
     test_table = Table('test', meta,
