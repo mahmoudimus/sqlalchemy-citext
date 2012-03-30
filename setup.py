@@ -13,7 +13,7 @@ with open(os.path.join(PATH_TO_FILE, 'README.md')) as f:
     long_description = f.read()
 
 
-VERSION = (1, 0, 1)
+VERSION = (1, 0, 2)
 
 
 # Dynamically calculate the version based on VERSION tuple
