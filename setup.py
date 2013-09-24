@@ -31,8 +31,10 @@ setup(
     version=version,
     description="A sqlalchemy plugin that allows postgres use of CITEXT.",
     long_description=long_description,
-    author='Mahmoud Abdelkader',
-    author_email='mabdelkader@gmail.com',
+    author=', '.join([
+        'Mahmoud Abdelkader',
+        'Davide Setti',
+    ]),
     url='https://github.com/mahmoudimus/sqlalchemy-citext',
     install_requires=[
         'SQLAlchemy>=0.6',
