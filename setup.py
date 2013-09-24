@@ -13,7 +13,7 @@ with open(os.path.join(PATH_TO_FILE, 'README.md')) as f:
     long_description = f.read()
 
 
-VERSION = (1, 0, 2)
+VERSION = (1, 1, 0)
 
 
 # Dynamically calculate the version based on VERSION tuple
@@ -36,7 +36,6 @@ setup(
     url='https://github.com/mahmoudimus/sqlalchemy-citext',
     install_requires=[
         'SQLAlchemy>=0.6',
-        'psycopg2>=2.3',
     ],
     setup_requires=[],
     zip_safe=False,
