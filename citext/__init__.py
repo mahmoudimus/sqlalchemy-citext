@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 import sqlalchemy.types as types
+from sqlalchemy.dialects.postgresql.base import ischema_names
 
 
 class CIText(types.UserDefinedType):
@@ -17,6 +18,10 @@ class CIText(types.UserDefinedType):
         def process(value):
             return value
         return process
+
+
+# Register CIText to SQLAlchemy's Postgres reflection subsystem.
+ischema_names['citext'] = CIText
 
 
 if __name__ == '__main__':
