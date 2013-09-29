@@ -59,5 +59,5 @@ if __name__ == '__main__':
     ses.commit()
     row = ses.query(TestObj).filter(TestObj.txt == 'foofighter').all()
     assert len(row) == 1
-    print row
+    print(row)
     ses.close()
