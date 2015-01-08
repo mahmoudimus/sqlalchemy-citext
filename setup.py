@@ -39,6 +39,7 @@ setup(
     install_requires=[
         'SQLAlchemy>=0.6',
     ],
+    test_suite='tests',
     setup_requires=[],
     zip_safe=False,
     packages=find_packages(),
