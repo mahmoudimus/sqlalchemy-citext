@@ -23,6 +23,9 @@ from sqlalchemy import create_engine, MetaData, Integer
 from sqlalchemy.schema import Column, Table
 import sqlalchemy.orm as orm
 
+from citext import CIText
+
+
 engine = create_engine('postgresql://localhost/test_db')
 meta = MetaData()
 
