@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 
 try:
@@ -9,11 +12,11 @@ except ImportError:
 PATH_TO_FILE = os.path.dirname(__file__)
 
 
-with open(os.path.join(PATH_TO_FILE, 'README.md')) as f:
+with open(os.path.join(PATH_TO_FILE, 'README.rst')) as f:
     long_description = f.read()
 
 
-VERSION = (1, 4, 0)
+VERSION = (1, 5, 0)
 
 
 # Dynamically calculate the version based on VERSION tuple
@@ -31,7 +34,6 @@ setup(
     version=version,
     description="A sqlalchemy plugin that allows postgres use of CITEXT.",
     long_description=long_description,
-    long_description_content_type="text/markdown",
     author=', '.join([
         'Mahmoud Abdelkader',
         'Davide Setti',
@@ -41,6 +43,7 @@ setup(
         'SQLAlchemy>=0.6',
     ],
     test_suite='tests',
+    license='BSD',
     setup_requires=[],
     zip_safe=False,
     packages=find_packages(),
