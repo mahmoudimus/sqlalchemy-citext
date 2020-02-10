@@ -31,6 +31,7 @@ setup(
     version=version,
     description="A sqlalchemy plugin that allows postgres use of CITEXT.",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author=', '.join([
         'Mahmoud Abdelkader',
         'Davide Setti',
@@ -47,6 +48,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 2',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )
