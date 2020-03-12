@@ -46,7 +46,7 @@ setup(
     license='BSD',
     setup_requires=[],
     zip_safe=False,
-    packages=find_packages(),
+    packages=['citext'],
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
