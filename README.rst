@@ -91,3 +91,4 @@ Contributors
 - `@dstufft <https://github.com/dstufft>`_
 - `@brmzkw <https://github.com/brmzkw>`_
 - `@graingert <https://github.com/graingert>`_
+- `@cjmayo <https://github.com/cjmayo>`_
