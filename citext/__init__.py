@@ -4,6 +4,9 @@ import sqlalchemy.types as types
 from sqlalchemy.dialects.postgresql.base import ischema_names
 
 
+__version__ = '1.6.2'
+
+
 class CIText(types.Concatenable, types.UserDefinedType):
 
     def get_col_spec(self):

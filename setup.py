@@ -1,32 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
+import re
 
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
-PATH_TO_FILE = os.path.dirname(__file__)
-
-
-with open(os.path.join(PATH_TO_FILE, 'README.rst')) as f:
+with open('README.rst') as f:
     long_description = f.read()
 
 
-VERSION = (1, 6, 1)
-
-
-# Dynamically calculate the version based on VERSION tuple
-if len(VERSION) > 2 and VERSION[2] is not None:
-    str_version = "%s.%s_%s" % VERSION[:3]
-else:
-    str_version = "%s.%s" % VERSION[:2]
-
-
-version = str_version
+with open('citext/__init__.py') as f:
+    version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
 
 setup(
