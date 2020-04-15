@@ -5,6 +5,18 @@ from sqlalchemy.dialects.postgresql.base import ischema_names
 
 
 class CIText(types.Concatenable, types.UserDefinedType):
+    # This is copied from the `literal_processor` of sqlalchemy's own `String`
+    # type.
+    def literal_processor(self, dialect):
+        def process(value):
+            value = value.replace("'", "''")
+
+            if dialect.identifier_preparer._double_percents:
+                value = value.replace("%", "%%")
+
+            return "'%s'" % value
+
+        return process
 
     def get_col_spec(self):
         return 'CITEXT'
