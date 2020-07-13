@@ -92,3 +92,4 @@ Contributors
 - `@brmzkw <https://github.com/brmzkw>`_
 - `@graingert <https://github.com/graingert>`_
 - `@cjmayo <https://github.com/cjmayo>`_
+- `@libre-man <https://github.com/libre-man>`_
