@@ -4,7 +4,7 @@ import sqlalchemy.types as types
 from sqlalchemy.dialects.postgresql.base import ischema_names
 
 
-__version__ = '1.6.3'
+__version__ = '1.7.0'
 
 
 class CIText(types.Concatenable, types.UserDefinedType):
