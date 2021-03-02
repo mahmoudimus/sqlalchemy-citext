@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+import psycopg2.extensions
+import sqlalchemy
 import sqlalchemy.types as types
 from sqlalchemy.dialects.postgresql.base import ischema_names
 
@@ -37,6 +39,14 @@ class CIText(types.Concatenable, types.UserDefinedType):
 
 # Register CIText to SQLAlchemy's Postgres reflection subsystem.
 ischema_names['citext'] = CIText
+
+
+def register_citext_array(engine):
+    """Call once with an engine for citext values to be returned as strings instead of characters"""
+    results = engine.execute(sqlalchemy.text("SELECT typarray FROM pg_type WHERE typname = 'citext'"))
+    oids = tuple(row[0] for row in results)
+    array_type = psycopg2.extensions.new_array_type(oids, 'citext[]', psycopg2.STRING)
+    psycopg2.extensions.register_type(array_type, None)
 
 
 if __name__ == '__main__':
