@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 
-import psycopg2.extensions
 import sqlalchemy
 import sqlalchemy.types as types
 from sqlalchemy.dialects.postgresql.base import ischema_names
@@ -43,6 +42,8 @@ ischema_names['citext'] = CIText
 
 def register_citext_array(engine):
     """Call once with an engine for citext values to be returned as strings instead of characters"""
+    import psycopg2.extensions
+
     results = engine.execute(sqlalchemy.text("SELECT typarray FROM pg_type WHERE typname = 'citext'"))
     oids = tuple(row[0] for row in results)
     array_type = psycopg2.extensions.new_array_type(oids, 'citext[]', psycopg2.STRING)
