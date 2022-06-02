@@ -10,6 +10,8 @@ __version__ = '1.8.0'
 
 
 class CIText(types.Concatenable, types.UserDefinedType):
+    cache_ok = True
+
     # This is copied from the `literal_processor` of sqlalchemy's own `String`
     # type.
     def literal_processor(self, dialect):
