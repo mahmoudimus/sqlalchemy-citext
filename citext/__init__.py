@@ -12,6 +12,7 @@ __version__ = '1.8.0'
 class CIText(types.Concatenable, types.UserDefinedType):
     # This is copied from the `literal_processor` of sqlalchemy's own `String`
     # type.
+    cache_ok = True
     def literal_processor(self, dialect):
         def process(value):
             value = value.replace("'", "''")
